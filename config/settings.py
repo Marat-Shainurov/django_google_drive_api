@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = 'django-insecure-61=)3pohg$+u3)j)e#*y5v35&&$08uj2jh#s51)u!k4bglonv#
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -74,7 +72,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -88,7 +85,6 @@ DATABASES = {
         'PORT': '5432'
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -108,7 +104,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -120,7 +115,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
@@ -130,3 +124,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CLIENT_ID = '564213839413-vj4njn0mfa373kqrm2v10md86unsneh6.apps.googleusercontent.com'
+CLIENT_SECRET = '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'
+REFRESH_TOKEN = '1//04-mrGyoQvgiNCgYIARAAGAQSNwF-L9IrCHT0aeREldwYo9bj6iR6UTGfgVxEOksnH3zFvf3bK3jIaqJtagBK7LsDO-M9OidYK-8'
+REDIRECT_URI = 'https://developers.google.com/oauthplayground/'
+TOKEN_URI = 'https://oauth2.googleapis.com/token'
+SCOPES = 'https://www.googleapis.com/auth/drive'
