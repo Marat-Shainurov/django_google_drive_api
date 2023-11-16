@@ -10,10 +10,14 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+load_dotenv(BASE_DIR / '.env')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -22,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-61=)3pohg$+u3)j)e#*y5v35&&$08uj2jh#s51)u!k4bglonv#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG') == 'True'
 
 ALLOWED_HOSTS = []
 
@@ -78,11 +82,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'db_drive_api',
-        'USER': 'postgres',
-        'PASSWORD': 'Benzokolon1',
-        'HOST': 'localhost',
-        'PORT': '5432'
+        'NAME': os.getenv('DATABASE_NAME'),
+        'USER': os.getenv('DATABASE_USER'),
+        'PASSWORD': os.getenv('DATABASE_PASSWORD'),
+        'HOST': os.getenv('DATABASE_HOST'),
+        'PORT': os.getenv('DATABASE_PORT')
     }
 }
 
@@ -125,9 +129,9 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CLIENT_ID = '564213839413-vj4njn0mfa373kqrm2v10md86unsneh6.apps.googleusercontent.com'
-CLIENT_SECRET = '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'
-REFRESH_TOKEN = '1//04-mrGyoQvgiNCgYIARAAGAQSNwF-L9IrCHT0aeREldwYo9bj6iR6UTGfgVxEOksnH3zFvf3bK3jIaqJtagBK7LsDO-M9OidYK-8'
-REDIRECT_URI = 'https://developers.google.com/oauthplayground/'
-TOKEN_URI = 'https://oauth2.googleapis.com/token'
-SCOPES = 'https://www.googleapis.com/auth/drive'
+CLIENT_ID = os.getenv('CLIENT_ID')
+CLIENT_SECRET = os.getenv('CLIENT_SECRET')
+REFRESH_TOKEN = os.getenv('REFRESH_TOKEN')
+REDIRECT_URI = os.getenv('REDIRECT_URI')
+TOKEN_URI = os.getenv('TOKEN_URI')
+SCOPES = os.getenv('SCOPES')
