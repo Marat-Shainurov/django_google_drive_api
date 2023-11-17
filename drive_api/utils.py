@@ -13,7 +13,6 @@ def upload_to_google_drive(name: str, data: str) -> Dict[str, Any]:
     Adds a new file to the Google Drive account.
     :param name: File name to upload
     :param data: File content to write
-    :return: None
     """
     credentials = Credentials.from_authorized_user_info(
         {
