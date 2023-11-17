@@ -13,7 +13,7 @@ google-auth-httplib2.
    - http://158.160.72.208/docs/
 
 # Testing
--All the endpoints are covered by pytest tests in /tests/test_main.py \
+- The drive_api/upload url is tested in /drive_api/tests.py
 - Run tests:\
-  docker-compose exec app_sales_networks python manage.py test
+  python manage.py test
 
