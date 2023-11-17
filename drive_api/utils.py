@@ -1,4 +1,5 @@
 from io import BytesIO
+from typing import Dict, Any
 
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
@@ -7,7 +8,7 @@ from googleapiclient.http import MediaIoBaseUpload
 from config import settings
 
 
-def upload_to_google_drive(name: str, data: str) -> None:
+def upload_to_google_drive(name: str, data: str) -> Dict[str, Any]:
     """
     Adds a new file to the Google Drive account.
     :param name: File name to upload
